@@ -10,7 +10,7 @@ source:
   sha256: e3138bfdee5f57481a2a6e078714be20f8c71ab1ff3f07f8fb1cfa25191fed2a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -19,10 +19,9 @@ requirements:
     - pip
     - python >=3.5
   run:
-    - ansimarkup >=1.4.0
-    - better_exceptions_fork >=0.2.1.post6
-    - colorama >=0.3.4
+    - colorama >=0.3.4  # [win]
     - python >=3.5
+    - win32_setctime >=1.0.0  # [win]
 
 test:
   imports:
