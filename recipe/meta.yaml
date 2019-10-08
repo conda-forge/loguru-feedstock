@@ -31,8 +31,7 @@ about:
   home: https://github.com/Delgan/loguru
   license: MIT
   license_family: MIT
-  # Package does not ship its license presently
-  # license_file: LICENSE
+  license_file: LICENSE
   summary: Python logging made (stupidly) simple
   dev_url: https://github.com/Delgan/loguru
 
