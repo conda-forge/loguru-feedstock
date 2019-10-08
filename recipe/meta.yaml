@@ -10,19 +10,18 @@ source:
   sha256: e3138bfdee5f57481a2a6e078714be20f8c71ab1ff3f07f8fb1cfa25191fed2a
 
 build:
-  number: 0
-  noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  number: 1
+  skip: True  # [py2k]
+  script: "{{ PYTHON }} -m pip install . -vv "
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
   run:
-    - ansimarkup >=1.4.0
-    - better_exceptions_fork >=0.2.1.post6
-    - colorama >=0.3.4
-    - python >=3.5
+    - python
+    - colorama >=0.3.4  # [win]
+    - win32_setctime >=1.0.0  # [win]
 
 test:
   imports:
@@ -32,8 +31,7 @@ about:
   home: https://github.com/Delgan/loguru
   license: MIT
   license_family: MIT
-  # Package does not ship its license presently
-  # license_file: LICENSE
+  license_file: LICENSE
   summary: Python logging made (stupidly) simple
   dev_url: https://github.com/Delgan/loguru
 
