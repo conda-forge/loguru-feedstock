@@ -11,15 +11,16 @@ source:
 
 build:
   number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  skip: True  # [py2k]
+  script: "{{ PYTHON }} -m pip install . -vv "
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
   run:
+    - python
     - colorama >=0.3.4  # [win]
-    - python >=3.5
     - win32_setctime >=1.0.0  # [win]
 
 test:
