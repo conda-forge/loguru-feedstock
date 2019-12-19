@@ -20,6 +20,7 @@ requirements:
     - python
   run:
     - python
+    - aiocontextvars >=0.2.0  # [py<37]
     - colorama >=0.3.4  # [win]
     - win32_setctime >=1.0.0  # [win]
 
