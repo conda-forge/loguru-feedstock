@@ -20,8 +20,9 @@ requirements:
     - python
   run:
     - python
-    - colorama >=0.3.4  # [win]
+    - colorama >=0.3.4        # [win]
     - win32_setctime >=1.0.0  # [win]
+    - aiocontextvars          # [py36]
 
 test:
   imports:
