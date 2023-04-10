@@ -1,5 +1,5 @@
 {% set name = "loguru" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 066bd06758d0a513e9836fd9c6b5a75bfb3fd36841f4b996bc60b547a309d41c
+  sha256: 1612053ced6ae84d7959dd7d5e431a0532642237ec21f7fd83ac73fe539e03e1
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py2k]
   script: '{{ PYTHON }} -m pip install . -vv '
 
