@@ -11,7 +11,6 @@ source:
 
 build:
   number: 1
-  skip: true  # [py2k]
   script: '{{ PYTHON }} -m pip install . -vv '
 
 requirements:
@@ -25,7 +24,6 @@ requirements:
     - python
     - colorama >=0.3.4        # [win]
     - win32_setctime >=1.0.0  # [win]
-    - aiocontextvars          # [py36]
 
 test:
   imports:
