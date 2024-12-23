@@ -1,16 +1,16 @@
 {% set name = "loguru" %}
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e671a53522515f34fd406340ee968cb9ecafbc4b36c679da03c18fd8d0bd51ac
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6
 
 build:
-  number: 2
+  number: 0
   script: '{{ PYTHON }} -m pip install . -vv '
 
 requirements:
@@ -20,7 +20,7 @@ requirements:
   host:
     - pip
     - python
-    - setuptools
+    - flit-core
   run:
     - python
     - colorama >=0.3.4        # [win]
