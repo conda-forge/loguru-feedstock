@@ -10,20 +10,19 @@ source:
   sha256: 19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6
 
 build:
+  skip: true  # [py>=400 or py2k]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  noarch: python
 
 requirements:
   host:
-    - python
+    - python >=3.5,<4.0
     - flit-core >=3,<4
     - pip
   run:
-    - python
-    - __unix                  # [unix]
-    - __win                   # [win]
+    - python >=3.5,<4.0
     - colorama >=0.3.4        # [win]
+    - aiocontextvars >=0.2.0  # [py<37]
     - win32_setctime >=1.0.0  # [win]
 
 test:
