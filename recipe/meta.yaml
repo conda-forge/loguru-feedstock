@@ -15,11 +15,11 @@ build:
 
 requirements:
   host:
-    - python >=3.5,<4.0
+    - python
     - flit-core >=3,<4
     - pip
   run:
-    - python >=3.5,<4.0
+    - python
     - colorama >=0.3.4        # [win]
     - aiocontextvars >=0.2.0  # [py<37]
     - win32_setctime >=1.0.0  # [win]
