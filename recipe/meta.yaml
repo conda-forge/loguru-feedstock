@@ -1,34 +1,39 @@
 {% set name = "loguru" %}
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e671a53522515f34fd406340ee968cb9ecafbc4b36c679da03c18fd8d0bd51ac
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/loguru-{{ version }}.tar.gz
+  sha256: 19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6
 
 build:
-  number: 2
-  script: '{{ PYTHON }} -m pip install . -vv '
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
+    - python {{ python_min }}
+    - flit-core >=3,<4
     - pip
-    - python
-    - setuptools
   run:
-    - python
+    - python >={{ python_min }}
+    - __unix  # [unix]
+    - __win   # [win]
     - colorama >=0.3.4        # [win]
     - win32_setctime >=1.0.0  # [win]
 
 test:
   imports:
     - loguru
+  commands:
+    - pip check
+  requires:
+    - python {{ python_min }}
+    - pip
 
 about:
   home: https://github.com/Delgan/loguru
