@@ -1,5 +1,5 @@
 {% set name = "loguru" %}
-{% set version = "0.7.3" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/loguru-{{ version }}.tar.gz
-  sha256: 19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6
+  sha256: 066bd06758d0a513e9836fd9c6b5a75bfb3fd36841f4b996bc60b547a309d41c
 
 build:
-  number: 0
+  number: 3
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core >=3,<4
+    - setuptools
     - pip
   run:
     - python >={{ python_min }}
