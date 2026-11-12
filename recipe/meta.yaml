@@ -1,13 +1,13 @@
 {% set name = "loguru" %}
-{% set version = "0.7.3" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/loguru-{{ version }}.tar.gz
-  sha256: 19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/loguru-{{ version }}.tar.gz
+  sha256: fb3e4623288e37700a0577f6e0ce776cc1860b5d95c657d67f07a2476b304867
 
 build:
   number: 0
